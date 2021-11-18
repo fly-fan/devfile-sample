@@ -12,16 +12,6 @@ metadata:
   provider: Red Hat
   supportUrl: https://github.com/devfile-samples/devfile-support#support-information
 components:
-  - name: outerloop-build
-    image:
-      imageName: nodejs-image:latest
-      dockerfile:
-        uri: Dockerfile
-        buildContext: .
-        rootRequired: false
-  - name: outerloop-deploy
-    kubernetes:
-      uri: outerloop-deploy.yaml
   - name: runtime
     container:
       image: registry.access.redhat.com/ubi8/nodejs-14:latest
@@ -64,17 +54,4 @@ commands:
       group:
         kind: test
         isDefault: true
-  - id: build-image
-    apply:
-      component: outerloop-build
-  - id: deployk8s
-    apply:
-      component: outerloop-deploy
-  - id: deploy
-    composite:
-      commands:
-        - build-image
-        - deployk8s
-      group:
-        kind: deploy
-        isDefault: true
+
