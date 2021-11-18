@@ -12,15 +12,15 @@ metadata:
   provider: Red Hat
   supportUrl: https://github.com/devfile-samples/devfile-support#support-information
 components:
-  - container:
-     endpoints:
-     - name: http-3000
-       targetPort: 3000
-     image: registry.access.redhat.com/ubi8/nodejs-14:latest
-     memoryLimit: 1024Mi
-     mountSources: true
-     sourceMapping: /project
-  name: runtime
+  - name: runtime
+    container:
+      image: registry.access.redhat.com/ubi8/nodejs-14:latest
+      memoryLimit: 1024Mi
+      mountSources: true
+      sourceMapping: /project
+      endpoints:
+        - name: http-3000
+          targetPort: 3000
 commands:
   - id: install
     exec:
