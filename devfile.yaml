@@ -13,6 +13,8 @@ metadata:
   supportUrl: https://github.com/devfile-samples/devfile-support#support-information
 components:
   - name: runtime
+    attributes:
+      tool: console-import
     container:
       image: registry.access.redhat.com/ubi8/nodejs-14:latest
       memoryLimit: 1024Mi
