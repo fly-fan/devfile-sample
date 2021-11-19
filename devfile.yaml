@@ -7,9 +7,6 @@ metadata:
   tags: ["NodeJS", "Express", "ubi8"]
   projectType: "nodejs"
   language: "nodejs"
-  attributes:
-    alpha.build-context: .
-    alpha.build-dockerfile: Dockerfile
 components:
   - name: buildguidance
     attributes:
