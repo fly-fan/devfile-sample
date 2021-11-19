@@ -39,19 +39,3 @@ commands:
       group:
         kind: run
         isDefault: true
-   - id: debug
-    exec:
-      component: runtime
-      commandLine: npm run debug
-      workingDir: /project
-      group:
-        kind: debug
-        isDefault: true
-  - id: test
-    exec:
-      component: runtime
-      commandLine: npm test
-      workingDir: /project
-      group:
-        kind: test
-        isDefault: true
